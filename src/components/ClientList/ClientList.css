@@ -5,6 +5,7 @@
 }
 .client-table {
   width: 100%;
+  min-width: 620px;
   table-layout: fixed;
   border-collapse: collapse;
   font-size: 13px;
@@ -12,7 +13,7 @@
 
 .client-table th:first-child,
 .client-table td:first-child {
-  width: 32%;
+  width: 28%;
 }
 
 .client-table th {
@@ -34,7 +35,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .tag {
@@ -83,7 +84,6 @@
 
   .tag {
     padding: 7px 12px;
-    white-space: normal;
     text-align: center;
   }
 }
