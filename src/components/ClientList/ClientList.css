@@ -5,15 +5,14 @@
 }
 .client-table {
   width: 100%;
-  min-width: 620px;
   table-layout: fixed;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .client-table th:first-child,
 .client-table td:first-child {
-  width: 28%;
+  width: 24%;
 }
 
 .client-table th {
@@ -34,8 +33,9 @@
 .tag-list {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 6px;
   flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .tag {
@@ -43,10 +43,10 @@
   align-items: center;
   justify-content: center;
 
-  padding: 7px 16px;
+  padding: 6px 8px;
   border-radius: 999px;
 
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 1;
 
@@ -79,11 +79,12 @@
 
 @media (max-width: 640px) {
   .tag-list {
-    gap: 8px;
+    gap: 3px;
   }
 
   .tag {
-    padding: 7px 12px;
+    padding: 5px 4px;
+    font-size: 10px;
     text-align: center;
   }
 }
