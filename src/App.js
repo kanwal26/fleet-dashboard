@@ -12,7 +12,7 @@ function App() {
   const handleLogout = () => setIsLoggedIn(false);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
       <Routes>
         {/* Sign-in page. If already logged in, skip straight to the dashboard. */}
         <Route
