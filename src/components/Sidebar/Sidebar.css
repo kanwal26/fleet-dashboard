@@ -1,0 +1,131 @@
+
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0; /* never let the flex layout squeeze the sidebar narrower */
+  background-color: var(--color-white);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.sidebar-logo {
+  font-size: 20px;
+  font-weight: 650;
+  font-style: italic; 
+  color: #1786bd;
+  margin-bottom: var(--space-xl);
+  padding: 15px var(--space-sm);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1; /* pushes the logout button to the bottom of the sidebar */
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+
+  width: calc(100% + 32px);   /* Fill the sidebar */
+  margin-left: -16px;         /* Cancel sidebar padding */
+  margin-right: -16px;
+
+  padding: 8px 24px;
+  font-size: 12px;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+
+.sidebar-menu-item:hover {
+  background-color: var(--color-background);
+}
+
+.sidebar-menu-item.active {
+  background: #1786bd;
+  color: white;
+  font-weight: 600;
+  border-radius: 0;     /* No rounded corners */
+}
+
+.sidebar-icon {
+  font-size: 12px;
+  width: 15px;
+  text-align: center;
+}
+
+.sidebar-logout {
+  background: none;
+  color: var(--color-text-light);
+  font-size: 14px;
+  padding: 10px var(--space-sm);
+  text-align: left;
+  border-radius: 8px;
+}
+
+.sidebar-logout:hover {
+  background-color: var(--color-background);
+  color: var(--color-danger);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   - Tablet: shrink the sidebar and hide the text labels, icons only.
+   - Mobile: turn the sidebar into a horizontal bar along the top.
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 80px;
+    align-items: center;
+  }
+
+  .sidebar-logo {
+    font-size: 0; /* hide the text but keep the element for spacing */
+  }
+
+  .sidebar-logo::after {
+    content: "🚚"; /* show a small icon instead of the full logo text */
+    font-size: 20px;
+  }
+
+  .sidebar-menu-item span:not(.sidebar-icon) {
+    display: none;
+  }
+
+  .sidebar-logout {
+    font-size: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .sidebar-logo {
+    display: none;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+    flex: none;
+    gap: var(--space-md);
+  }
+
+  .sidebar-logout {
+    margin-left: auto;
+  }
+}
