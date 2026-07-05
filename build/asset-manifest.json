@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fleet-dashboard/static/css/main.737f22b0.css",
+    "main.js": "/fleet-dashboard/static/js/main.bd1a047d.js",
+    "index.html": "/fleet-dashboard/index.html",
+    "main.737f22b0.css.map": "/fleet-dashboard/static/css/main.737f22b0.css.map",
+    "main.bd1a047d.js.map": "/fleet-dashboard/static/js/main.bd1a047d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.737f22b0.css",
+    "static/js/main.bd1a047d.js"
+  ]
+}

@@ -2,31 +2,17 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
 
-/**
- * Login page - matches the "Welcome Back / Sign in" screen from the design.
- *
- * Props:
- *  - onLogin: function passed down from App.js, called when the form
- *    is submitted successfully so App can flip isLoggedIn to true.
- */
 function Login({ onLogin }) {
-  // Controlled inputs: React state holds the current value of each field.
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // useNavigate gives us a function to move to a different route/URL
-  // in response to code (e.g. after a successful login) instead of
-  // only in response to the user clicking a link.
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    // Stops the browser from doing a full page reload on form submit
+
     event.preventDefault();
-
-    // In a real app you would call an API here to check the credentials.
     onLogin();
-
-    // Once logged in, send the user to the dashboard route.
     navigate("/dashboard");
   };
 
